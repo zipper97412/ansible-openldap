@@ -13,6 +13,10 @@
   when: ansible_distribution == "Ubuntu"
   tags: openldap
 
+- include: Debian.yml
+  when: ansible_distribution == "Debian"
+  tags: openldap
+
 - name: Create OpenLDAP defaults configuration
   template: >
     src=slapd_defaults.j2
